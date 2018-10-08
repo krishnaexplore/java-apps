@@ -1,0 +1,13 @@
+version: "2.1"
+services:
+  mongo:
+    image: mongo:latest
+    ports:
+    - 27017:27017
+    command: --smallfiles
+  spring-mongo-app:
+    image: spring-mongo-app:latest
+    ports:
+    - 8080:8080
+    links:
+    - mongo
